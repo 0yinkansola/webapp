@@ -29,7 +29,7 @@ li {
     font-weight: 400;
     line-height: 18px;
     text-align: center;
-    border: 1px solid #969696;
+    border: 1px solid #7a028f;
     width: Fill (143px)px;
     height: fit-content;
     padding: 17.5px 25px 17.5px 25px;
@@ -44,7 +44,7 @@ li {
 
 .asterik{
     font-size: 28px;
-    color: #FF0000;
+    color: #7a028f;
     height: auto;
 }
 
@@ -110,13 +110,13 @@ li {
     font-size: 16px;
     font-weight: 600;
     line-height: 19.5px;
-    border: 1px solid #0162E8;
+    border: 1px solid #7a028f;
     border-radius: 8px;
-    color: #0162E8;
+    color: #7a028f;
 }
 
 .next {
-    background: var(--Colors-hover, #186BAD);
+    background: var(--Colors-hover, #7a028f);
     width: 80px;
     /* height: 56px; */
     padding: 15px;
@@ -159,8 +159,8 @@ li {
 }
 
 .active-tab {
-    border: 1px solid #DE4B18;
-    background: #1F70B2;
+    border: 1px solid #7a028f;
+    background: #7a028f;
     width: 143px;
     height: fit-content;
     padding: 17.5px 25px 17.5px 25px;
@@ -236,7 +236,7 @@ button.back a[href="tutor2.html"],
 button.back a[href="tutor3.html"],
 button.back a[href="tutor4.html"] {
     background-color: white;
-    color: #0162E8;
+    color: #7a028f;
     font-weight: bold;
 }
 
@@ -257,7 +257,7 @@ input[type="file"] {
 .upload-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #09BCFF;
+    background-color: #7a028f;
     color: white;
     border: none;
     border-radius: 4px;
@@ -274,7 +274,7 @@ table {
 thead{
     border-collapse: collapse;
     border-width: 0px;
-    background-color: #0162E8;
+    background-color: #7a028f;
 }
 
 th, td {
@@ -361,4 +361,108 @@ tbody tr:nth-child(even) {
     .upload-button {
         width: 100%;
     }
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+.submit-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+        background-color: purple;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        display: inline-block;
+    }
+    
+.center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full viewport height */
+    }
+    
+
+
+.popup {
+    display: none; /* Hide the popup by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+.popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkmark {
+    font-size: 24px;
+    color: rgb(107, 0, 128);
+    margin
+}
+.progress-bar {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+#progressBar {
+    width: 0;
+    height: 20px;
+    background-color: #7a028f;
+    border-radius: 5px;
+    transition: width 0.5s;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.popup-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.checkmark {
+    font-size: 48px;
+    color: rgb(107, 0, 128);
+}
+
+.submit {
+    padding: 10px 20px;
+    border: none;
+    background-color: #7a028f;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.submit:hover {
+    background-color: #5a0266;
 }

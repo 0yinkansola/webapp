@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -41,7 +41,7 @@
                 <li>Identification Documents and others</li>
             </ul>
             <div class="main-one" style="justify-content: space-between; width: auto;">
-                <h2 style="color: #0162E8;"><b>Educational Supporting Documents</b></h2>
+                <h2 style="color: #9204ae;"><b>Educational Supporting Documents</b></h2>
                 <label for="fileInput" class="upload-button">Upload Document</label>
                 <input type="file" id="fileInput" multiple style="display: none;">            
             </div>
@@ -61,15 +61,84 @@
             </div>
 
         </div>
+        <div class="progress-bar" id="progressBarContainer" style="display: none;">
+            <div id="progressBar"></div>
+            
+        </div>
+        <button class="submit-btn" id="submitBtn">Submit</button>
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <span class="checkmark">✓</span>
+                <p>Submitted</p>
+            </div>
+
 
         <div class="foot">
             <button class="back"><a href="tutor3.html">Return to Previous Location</a></button>
 
             <button class="next"><a href="tutor5.html">Next</a></button>
         </div>
-        
+
+        <div class="popup" id="popup" style="display: none;">
+            <div class="popup-content">
+                <span class="checkmark">✓</span>
+                <p>Submitted</p>
+            </div>
+        </div>
         <script>
-            // script.js
+            document.getElementById('fileInput').addEventListener('change', function(event) {
+                const fileTableBody = document.getElementById('fileTable').getElementsByTagName('tbody')[0];
+                fileTableBody.innerHTML = ''; 
+
+                Array.from(event.target.files).forEach(file => {
+                    const row = document.createElement('tr');
+
+                    const fileNameCell = document.createElement('td');
+                    fileNameCell.textContent = file.name;
+                    row.appendChild(fileNameCell);
+
+                    const fileSizeCell = document.createElement('td');
+                    fileSizeCell.textContent = (file.size / 1024).toFixed(2); // Size in KB
+                    row.appendChild(fileSizeCell);
+
+                    const fileTypeCell = document.createElement('td');
+                    fileTypeCell.textContent = file.type || 'N/A';
+                    row.appendChild(fileTypeCell);
+
+                    fileTableBody.appendChild(row);
+                });
+            });
+
+            document.getElementById('submitButton').addEventListener('click', function() {
+                const files = document.getElementById('fileInput').files;
+                if (files.length === 0) {
+                    alert('Please select files to upload.');
+                    return;
+                }
+
+                const progressBarContainer = document.getElementById('progressBarContainer');
+                const progressBar = document.getElementById('progressBar');
+                progressBarContainer.style.display = 'block';
+
+                let uploaded = 0;
+                const total = files.length;
+
+                function simulateUpload() {
+                    if (uploaded < total) {
+                        uploaded++;
+                        const progress = (uploaded / total) * 100;
+                        progressBar.style.width = progress + '%';
+                        setTimeout(simulateUpload, 500); // Simulate upload time
+                    } else {
+                        progressBarContainer.style.display = 'none';
+                        document.getElementById('popup').style.display = 'block';
+                    }
+                }
+
+                simulateUpload();
+            });
+        </script>
+        <!-- <script>
             document.getElementById('fileInput').addEventListener('change', function(event) {
                 const fileTableBody = document.getElementById('fileTable').getElementsByTagName('tbody')[0];
                 fileTableBody.innerHTML = ''; // Clear existing table content
@@ -92,6 +161,6 @@
                     fileTableBody.appendChild(row);
                 });
             });
-        </script>
+        </script> -->
     </body>
-</html>
+</html> -->
